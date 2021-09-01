@@ -10,7 +10,7 @@ from time import sleep as s
 from plugins.discord.discordgen import *
 from plugins.misc.game import *
 
-Version = "0.0.1"
+Version = "1.0.0"
 
 clear = lambda: os.system('cls')
 clear()
