@@ -29,12 +29,12 @@ def autoupdate():
 			test = requests.get("https://raw.githubusercontent.com/codingwithrj/mutitool/master/version.dat")
 			time.sleep(2)
 			if Version in test.text:
-				print(" You Are Using PhishMailer v.{}, you are upto date!".format(Version))
+				print(" You Are Using mutitool v.{}, you are upto date!".format(Version))
 				time.sleep(2)
 				clear()
 			else:
-				print(" Looks Like You Are Using Phishmailer v.{}, There Is A Newer Version Out, Please Update Repo!".format(Version))
-				print("https://github.com/BiZken/PhishMailer.git")
+				print(" Looks Like You Are Using mutiltool v.{}, There Is A Newer Version Out, Please Update Repo!".format(Version))
+				print("https://github.com/codingwithrj/mutitool")
 				sys.exit()
 		else:
 			pass
