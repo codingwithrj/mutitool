@@ -70,9 +70,8 @@ autoupdate()
 
 def discordSub():
     while True:
-        print("\n")
+        clear()
         print("What type is your question?")
-        print("\n")
         print("[1]:what is 1+1")
         print("[2]:Exit")
         print("\n")
@@ -85,8 +84,7 @@ def discordSub():
 def discordMenu():
     while True:
         clear()
-        print("[1]:")
-        print("\n")
+        print("[1]:textholder")
         print("[2]:Exit")
         print("\n")
         menu = int(input(": "))
@@ -95,15 +93,29 @@ def discordMenu():
         elif menu == 2:
             break
 
+def miscdMenu():
+    while True:
+        clear()
+        print("[1]:textholder")
+        print("[2]:Exit")
+        print("\n")
+        menu = int(input(": "))
+        if menu == 1:
+            pass
+        elif menu == 2:
+            break
+
 while True:
     clear()
-    print("Welcome,what would you like to do?type the number")
-    print("\n")
+    print("Welcome,what would you like to do? type the number")
     print("[1]:discord options")
     print("[2]:misc options")
     print("[3]:exit")
+    print("\n")
     menu = int(input(": "))
     if menu == 1:
         discordMenu()
+    elif menu == 2:
+        pass
     elif menu == 3:
         break
