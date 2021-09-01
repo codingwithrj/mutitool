@@ -80,9 +80,6 @@ def modules():
 
 def autoupdate():
 
-		with open('config.json') as json_file:
-			data = json.load(json_file)
-		if data['check-for-updates'] == "yes":
 			print(" Checking for updates...")
 			test = requests.get("https://raw.githubusercontent.com/codingwithrj/mutitool/master/version.dat")
 			s(2)
@@ -94,8 +91,7 @@ def autoupdate():
 				print(" Looks Like You Are Using mutiltool v.{}, There Is A Newer Version Out, Please Update Repo!".format(Version))
 				print("https://github.com/codingwithrj/mutitool")
 				sys.exit()
-		else:
-			pass
+
 pre()
 ctypes.windll.kernel32.SetConsoleTitleW("mutitool checking version - Made by RageWire#0001")
 autoupdate()
