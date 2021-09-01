@@ -8,7 +8,33 @@ from time import sleep as s
 Version = "0.0.1"
 
 clear = lambda: os.system('cls')
+clear()
 
+LICNECE = """
+Copyright © 2021 RageWire#0001
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+"""
+print(LICNECE)
+agrue = input("do you agrue to the legal LICNECE [yes or no]: ")
+if agrue == "yes":
+    print("loading main progarm")
+    s(1)
+    clear()
+elif agrue == "no":
+    print("ending progarm due to saying no")
+    s(1)
+    clear()
+    sys.exit()
+else:
+    print("please pick yes or no")
+    print("restart the progarm")
+    s(1)
+    sys.exit()
 def connected(host='http://duckduckgo.com'):
     try:
         urlopen(host)
@@ -27,10 +53,10 @@ def autoupdate():
 		if data['check-for-updates'] == "yes":
 			print(" Checking for updates...")
 			test = requests.get("https://raw.githubusercontent.com/codingwithrj/mutitool/master/version.dat")
-			time.sleep(2)
+			s(2)
 			if Version in test.text:
 				print(" You Are Using mutitool v.{}, you are upto date!".format(Version))
-				time.sleep(2)
+				s(2)
 				clear()
 			else:
 				print(" Looks Like You Are Using mutiltool v.{}, There Is A Newer Version Out, Please Update Repo!".format(Version))
@@ -40,10 +66,9 @@ def autoupdate():
 			pass
 pre()
 autoupdate()
-s(2)
 
 
-def math_menu2():
+def discordSub():
     while True:
         print("\n")
         print("What type is your question?")
@@ -57,29 +82,28 @@ def math_menu2():
         elif menu == 2:
             break
 
-def math_menu():
+def discordMenu():
     while True:
+        clear()
+        print("[1]:")
         print("\n")
-        print("What type is your question?")
-        print("\n")
-        print("[1]:some simple math")
         print("[2]:Exit")
         print("\n")
         menu = int(input(": "))
         if menu == 1:
-            math_menu2()
+            discordSub()
         elif menu == 2:
             break
 
 while True:
-    print("\n")
+    clear()
     print("Welcome,what would you like to do?type the number")
     print("\n")
-    print("[1]:Math solver")
-    print("[2]:exit")
-    print("\n")
+    print("[1]:discord options")
+    print("[2]:misc options")
+    print("[3]:exit")
     menu = int(input(": "))
     if menu == 1:
-        math_menu()
-    elif menu == 2:
+        discordMenu()
+    elif menu == 3:
         break
