@@ -9,7 +9,7 @@ from time import sleep as s
 
 from plugins.discord.discordgen import *
 from plugins.misc.game import *
-
+from plugins.misc.ccgeb import *
 Version = "1.0.0"
 
 clear = lambda: os.system('cls')
@@ -70,6 +70,12 @@ def modules():
     except ImportError: # If it has not been installed
         input(f"Module requests not installed, to install run '{'py -3' if os.name == 'nt' else 'python3.8'} -m pip install requests'\nPress enter to exit")# Tell the user it has not been installed and how to install it
         exit() #
+    try: # Setup try statement to catch the error
+        import enum # Try to import requests
+    except ImportError: # If it has not been installed
+        input(f"Module requests not installed, to install run '{'py -3' if os.name == 'nt' else 'python3.8'} -m pip install requests'\nPress enter to exit")# Tell the user it has not been installed and how to install it
+        exit() #
+
 
 def autoupdate():
 
@@ -101,7 +107,7 @@ try:
             clear()
             print("discord gens")
             print("[1]:discord nitro gen and check (most likly not going to work)")
-            print("[2]:Exit")
+            print("[2]:Back")
             print("\n")
             menu = int(input(": "))
             if menu == 1:
@@ -115,7 +121,7 @@ try:
             ctypes.windll.kernel32.SetConsoleTitleW("mutitool discord menu - Made by RageWire#0001")
             clear()
             print("[1]:discord gens")
-            print("[2]:Exit")
+            print("[2]:Back")
             print("\n")
             menu = int(input(": "))
             if menu == 1:
@@ -127,7 +133,7 @@ try:
             ctypes.windll.kernel32.SetConsoleTitleW("mutitool misc sub menu - Made by RageWire#0001")
             clear()
             print("[1]:game1")
-            print("[2]:Exit")
+            print("[2]:Back")
             print("\n")
             menu = int(input(": "))
             if menu == 1:
@@ -141,13 +147,22 @@ try:
             ctypes.windll.kernel32.SetConsoleTitleW("mutitool misc menu - Made by RageWire#0001")
             clear()
             print("[1]:games")
-            print("[2]:Exit")
+            print("[2]:cc code card gen")
+            print("[3]:Back")
             print("\n")
             menu = int(input(": "))
             if menu == 1:
                 miscdSubMenu()
             elif menu == 2:
+                ctypes.windll.kernel32.SetConsoleTitleW("mutitool cc code gen - Made by RageWire#0001")
+                maincc()
+                print("saved to ccler.txt if generator right")
+                s(1)
+            elif menu == 3:
                 break
+
+
+
 
     while True:
         ctypes.windll.kernel32.SetConsoleTitleW("mutitool main menu - Made by RageWire#0001")
