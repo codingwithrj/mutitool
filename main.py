@@ -8,6 +8,7 @@ from time import sleep as s
 
 
 from plugins.discord.discordgen import *
+from plugins.misc.game import *
 
 Version = "0.0.1"
 
@@ -121,17 +122,30 @@ try:
                 discordSub()
             elif menu == 2:
                 break
+    def miscdSubMenu():
+        while True:
+            ctypes.windll.kernel32.SetConsoleTitleW("mutitool misc sub menu - Made by RageWire#0001")
+            clear()
+            print("[1]:game1")
+            print("[2]:Exit")
+            print("\n")
+            menu = int(input(": "))
+            if menu == 1:
+                game()
+            elif menu == 2:
+                break
+
 
     def miscdMenu():
         while True:
             ctypes.windll.kernel32.SetConsoleTitleW("mutitool misc menu - Made by RageWire#0001")
             clear()
-            print("[1]:textholder")
+            print("[1]:games")
             print("[2]:Exit")
             print("\n")
             menu = int(input(": "))
             if menu == 1:
-                pass
+                miscdSubMenu()
             elif menu == 2:
                 break
 
